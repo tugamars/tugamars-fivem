@@ -285,6 +285,12 @@ Config.Cuff = {
         }
     },
 };
+
+Config.Cuffs.Skillcheck = { --Skillcheck on the player getting cuffed to try and escape
+    Enable=true,
+    Difficulties={'medium'},
+    Keys={'w','a','s','d'}
+}
 ```
 
 </details>

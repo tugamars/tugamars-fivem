@@ -86,10 +86,14 @@ Configuration is available.
 Inspired on SWAT 4 and Ready or Not, door wedges can be placed on doors to prevent them from being opened.
 While they can be removed, it will take a few minutes and skill after being located.
 
+### Battering RAM
+Realistic hand-held Battering RAM to bring doors down (and also unlock them in locking systems).
+
 </details>
 
 ## Preview
 [![Preview](https://img.youtube.com/vi/bG943hVCae0/0.jpg)](https://www.youtube.com/watch?v=bG943hVCae0)
+[![Preview](https://img.youtube.com/vi/Q5yts6gh6I8/0.jpg)](https://www.youtube.com/watch?v=Q5yts6gh6I8)
 
 ## Configuration
 
@@ -552,6 +556,20 @@ Config.Camera = {
 ```
 </details>
 
+### Battering RAM
+<details>
+    <summary>config/tactical/breach_ram.lua</summary>
+
+```lua
+Config.BreachRam = {
+    useItem=true,
+    itemName="battering_ram_tool",
+    enableCommand=true, --will register a command
+    commandName="breachram"
+};
+```
+</details>
+
 ## Developers
 
 This script exposes functions in order for developers to be able to integrate into their own scripts for restriction checks or other needs.
@@ -559,6 +577,7 @@ This script exposes functions in order for developers to be able to integrate in
 ### Client
 
 ``IsPlayerDragged(id)`` Returns a **boolean** with whether the player is being dragged.
+``IsPlayerDragging(id)`` Returns a **boolean** with whether the player is being dragged.
 
 ``GetDragState()`` Returns a **table** with the current state of dragging:
 ```
@@ -571,6 +590,12 @@ This script exposes functions in order for developers to be able to integrate in
 ```
 ``IsPlayerCuffed(id)`` Returns a **boolean** with whether the player is cuffed.
 ``IsPlayerShackled(id)`` Returns a **boolean** with whether the player is shackled.
+
+
+``dslrcamera()`` Triggers the function to open the camera ui (same used by inventory).
+``breachRamStart(entity)`` Triggers the Breach function on the nearest door (with proper checking). Can (optional) receive a **entity** parameter to specificy target.
+``tactical-door-wedge(entity)`` Triggers the Door Wedge function on the nearest door (with proper checking).  Can (optional) receive a **entity** parameter to specificy target.
+
 
 
 ## Code Exposed

@@ -593,7 +593,9 @@ This script exposes functions in order for developers to be able to integrate in
 
 
 ``dslrcamera()`` Triggers the function to open the camera ui (same used by inventory).
+
 ``breachRamStart(entity)`` Triggers the Breach function on the nearest door (with proper checking). Can (optional) receive a **entity** parameter to specificy target.
+
 ``tactical-door-wedge(entity)`` Triggers the Door Wedge function on the nearest door (with proper checking).  Can (optional) receive a **entity** parameter to specificy target.
 
 

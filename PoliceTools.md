@@ -598,7 +598,28 @@ This script exposes functions in order for developers to be able to integrate in
 
 ``tactical-door-wedge(entity)`` Triggers the Door Wedge function on the nearest door (with proper checking).  Can (optional) receive a **entity** parameter to specificy target.
 
+``cuffPlayer(ped,type)`` Will execute the 'arrest' animation on the client ped and arrest the target one.
 
+``uncuffPlayer(ped,cuffType, uncuffType)`` Will uncuff the player. 
+
+## State Bags
+
+# Client
+
+```
+{
+    isAttached=boolean, --Wheter or not the player is attached to a entity object (cuff to word)
+    object=entityid, --The object the player is attached to or nil
+    isCuffed=boolean, --Cuff status
+    cuffType=string, --Type of cuff (from config) or nil
+    isDragged=boolean,
+    isDragging=boolean,
+    dragger=plid, -- player id or nil
+    dragging=plid, -- player id or nil
+    isShackled=boolean,
+    isTackled=boolean,
+}
+```
 
 ## Code Exposed
 

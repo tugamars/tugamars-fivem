@@ -75,6 +75,8 @@ Take pictures that are automatically saved, zoom as much as you need, share your
 Requires inventory to work for now.
 Configuration is available.
 
+### Window Tint Checker
+A realistic Window Tint Checker tool with a custom prop that attaches to the glass and then displays a real life UI where you can measure the % of light transmission of a givem window on a vehicle.
 </details>
 
 ### Tactical
@@ -566,6 +568,35 @@ Config.BreachRam = {
     itemName="battering_ram_tool",
     enableCommand=true, --will register a command
     commandName="breachram"
+};
+```
+</details>
+
+
+
+### Window Tint Checker
+<details>
+    <summary>config/investigation/tintmeter.lua</summary>
+
+```lua
+Config.TintMeter={
+    useItem=false,
+    itemName="tintmeter",
+    bones={
+        ["window_lf"]=true,
+        ["window_rf"]=true,
+        ["window_lm"]=true,
+        ["window_rm"]=true,
+    },
+    levels = { --Light transmission. It let's through X%.
+        [1]=95, -- None
+        [2]=20, -- Pure Black
+        [3]=30, -- Dark Smoke
+        [4]=40, -- Light Smoke
+        [5]=80, -- Stock
+        [6]=70, -- Limo
+        [7]=72, -- Green
+    }
 };
 ```
 </details>
